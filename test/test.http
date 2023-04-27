@@ -1,0 +1,80 @@
+###
+
+GET http://localhost:8081/693 HTTP/1.1
+content-type: application/json
+
+# 200 (OK)
+# 404 (Not Found)
+
+###
+
+POST http://localhost:8081/ HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Монреаль",
+  "region": "Монреаль",
+  "district": "Квебек",
+  "population": 1942694,
+  "foundation": 1642
+}
+
+###
+
+DELETE http://localhost:8081/490 HTTP/1.1
+content-type: application/json
+# 200 (OK)
+# 404 (Not Found)
+
+###
+
+PATCH http://localhost:8081/population/490 HTTP/1.1
+content-type: application/json
+
+{"population":57575557}
+
+### 200 (OK)
+## 404 (Not Found)
+
+###
+
+GET http://localhost:8081/district/Приволжский HTTP/1.1
+content-type: application/json
+
+
+### 200 (OK)
+## 404 (Not Found)
+
+###
+
+GET http://localhost:8081/region/Пермский HTTP/1.1
+content-type: application/json
+
+
+### 200 (OK)
+## 404 (Not Found)
+
+###
+
+OPTIONS http://localhost:8081/population/range HTTP/1.1
+content-type: application/json
+
+{
+  "from": 150000,
+  "to": 700000
+}
+
+
+### 200 (OK)
+## 404 (Not Found)
+
+###
+
+OPTIONS http://localhost:8081/foundation/range HTTP/1.1
+content-type: application/json
+
+{
+  "from": 1500,
+  "to": 1700
+}
+
